@@ -1,0 +1,27 @@
+;;;
+Column;Description;Data Info and Importance;Action
+MANDT;Client ;Always the same value;Remove
+BUKRS;Company Code ;Numerical values with low/medium importance;Keep
+GJAHR;Fiscal Year;Only two year values - not relevant for this purpose;Remove
+HKONT;General Ledger;14 values with some importance;Keep
+KUNNR;Customer information;Several numerical values and has really good importance;Keep
+PRCTR;Profit Center;Several numerical values and has good importance;Remove
+KNA1_LAND1;Country code;Categorical values, but related with 'PRCTR';Remove
+KNA1_ORT01;City code;Categorical values, but related with 'PRCTR';Keep
+ZTERM;Term of payment Key;Several numerical values and has good importance;Keep
+DUE_DATE_SOURCE;Due Date Calculation term keys ;4 Categorical values without importance;Remove
+VALUE_EUR;Payment in euros;Several numerical values and it's the most important variable with some outliers;Keep
+MWSTS;Tax Amount in Local Currency;Several numerical values with some outliers, however, it's not important;Remove
+MWST2;LC2 tax amount information ;Always the same value;Remove
+BLART;Document type code;3 Categorical values without importance;Remove
+T003T_LTEXT;Document type description;3 Categorical values which correspond to same values in 'BLART';Remove
+TBSLT_LTEXT;Payment type operation;8 Categorical values in which it only matter if it's an 'Invoice' or not;Remove all but 'Invoice'
+MANSP;Dunning lock reason information ;97 % blanks and overall has low importance;Remove
+CTLPC;Credit risk levels;11 values and several blanks with low importance;Remove
+HISTORICRATING;Historical credit rating;Alphanumerical column with almost perfect correlation with 'CURRENTRATING';Remove
+CURRENTRATING;Current credit rating;Alphanumerical column with medium importance but with several blanks;Keep
+DATUM;Date of document emission;Date column irrelevant for this problem;Remove
+DUE_DATE;Date where invoice has to be paid;Date column only relevant for the predictor variable creation;Remove
+GJAHR2;Fiscal Year 2;6 year values - not relevant for this purpose;Remove
+DOCUMENT_DATE;Date of document emission (timestamp included);Timestamp column irrelevant for this problem;Remove
+PAYMENT_DATE;Date when payment was done;Timestamp column only relevant for the predictor variable creation;Remove
